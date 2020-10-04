@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "fastapi-async-mongodb"
+version = "0.1.0"
+description = ""
+authors = ["Michał Rosiak <michal.rosiak.dev@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+motor = "^2.3.0"
+fastapi = "^0.61.1"
+uvicorn = "^0.12.1"
+python-dotenv = "^0.14.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
