@@ -5,7 +5,7 @@ from bson import ObjectId
 from motor.motor_asyncio import AsyncIOMotorClient, AsyncIOMotorDatabase
 
 from app.db import DatabaseManager
-from app.db.models import PostDB, PydanticObjectId
+from app.db.models import PostDB, OID
 
 
 class MongoManager(DatabaseManager):
@@ -33,15 +33,15 @@ class MongoManager(DatabaseManager):
             posts_list.append(PostDB(**post, id=post['_id']))
         return posts_list
 
-    async def get_post(self, post_id: PydanticObjectId) -> PostDB:
+    async def get_post(self, post_id: OID) -> PostDB:
         post_q = await self.db.posts.find_one({'_id': ObjectId(post_id)})
         if post_q:
             return PostDB(**post_q, id=post_q['_id'])
 
-    async def delete_post(self, post_id: PydanticObjectId):
+    async def delete_post(self, post_id: OID):
         await self.db.posts.delete_one({'_id': ObjectId(post_id)})
 
-    async def update_post(self, post_id: PydanticObjectId, post: PostDB):
+    async def update_post(self, post_id: OID, post: PostDB):
         await self.db.posts.update_one({'_id': ObjectId(post_id)},
                                        {'$set': post.dict(exclude={'id'})})
 

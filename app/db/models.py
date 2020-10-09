@@ -8,7 +8,7 @@ from bson import ObjectId
 from pydantic.main import BaseModel
 
 
-class PydanticObjectId(ObjectId):
+class OID(str):
     @classmethod
     def __get_validators__(cls):
         yield cls.validate
@@ -23,6 +23,6 @@ class PydanticObjectId(ObjectId):
 
 
 class PostDB(BaseModel):
-    id: Optional[PydanticObjectId]
+    id: Optional[OID]
     title: str
     description: str

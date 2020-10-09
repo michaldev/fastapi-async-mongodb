@@ -24,7 +24,6 @@ Build on **Python: 3.8**.
 
 > Example is completely and works very well. In the future probably I add more.
 
-- Unit tests    
 - Scheme for MongoDB    
 - More examples with custom response models    
 - File handling with external provider (Amazon S3, DO Spaces)    

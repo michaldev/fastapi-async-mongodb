@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 
 from app.db import DatabaseManager, get_database
-from app.db.models import PostDB, PydanticObjectId
+from app.db.models import PostDB, OID
 
 router = APIRouter()
 
@@ -13,13 +13,13 @@ async def all_posts(db: DatabaseManager = Depends(get_database)):
 
 
 @router.get('/{post_id}')
-async def one_post(post_id: PydanticObjectId, db: DatabaseManager = Depends(get_database)):
+async def one_post(post_id: OID, db: DatabaseManager = Depends(get_database)):
     post = await db.get_post(post_id=post_id)
     return post
 
 
 @router.put('/{post_id}')
-async def update_post(post_id: PydanticObjectId, post: PostDB, db: DatabaseManager = Depends(get_database)):
+async def update_post(post_id: OID, post: PostDB, db: DatabaseManager = Depends(get_database)):
     post = await db.update_post(post=post, post_id=post_id)
     return post
 
@@ -31,5 +31,5 @@ async def add_post(post_response: PostDB, db: DatabaseManager = Depends(get_data
 
 
 @router.delete('/{post_id}')
-async def delete_post(post_id: PydanticObjectId, db: DatabaseManager = Depends(get_database)):
+async def delete_post(post_id: OID, db: DatabaseManager = Depends(get_database)):
     await db.delete_post(post_id=post_id)

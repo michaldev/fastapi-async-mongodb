@@ -10,6 +10,8 @@ motor = "^2.3.0"
 fastapi = "^0.61.1"
 uvicorn = "^0.12.1"
 python-dotenv = "^0.14.0"
+tavern = "^1.7.0"
+pytest = "^6.1.1"
 
 [tool.poetry.dev-dependencies]
 

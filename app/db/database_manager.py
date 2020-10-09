@@ -1,7 +1,7 @@
 from abc import abstractmethod
 from typing import List
 
-from app.db.models import PostDB, PydanticObjectId
+from app.db.models import PostDB, OID
 
 
 class DatabaseManager(object):
@@ -26,7 +26,7 @@ class DatabaseManager(object):
         pass
 
     @abstractmethod
-    async def get_post(self, post_id: PydanticObjectId) -> PostDB:
+    async def get_post(self, post_id: OID) -> PostDB:
         pass
 
     @abstractmethod
@@ -34,9 +34,9 @@ class DatabaseManager(object):
         pass
 
     @abstractmethod
-    async def update_post(self, post_id: PydanticObjectId, post: PostDB):
+    async def update_post(self, post_id: OID, post: PostDB):
         pass
 
     @abstractmethod
-    async def delete_post(self, post_id: PydanticObjectId):
+    async def delete_post(self, post_id: OID):
         pass

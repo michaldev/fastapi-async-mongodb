@@ -1,0 +1,38 @@
+---
+test_name: Tests posts
+
+includes:
+  - !include common.yaml
+
+stages:
+  - name: Getting empty posts list
+    request:
+      url: "{host}/api/posts/"
+      method: GET
+    response:
+      status_code: 200
+      json: []
+
+  - name: Creating post without parameters
+    request:
+      url: "{host}/api/posts/"
+      method: POST
+    response:
+      status_code: 422
+
+  - name: Creating post with parameters
+    request:
+      url: "{host}/api/posts/"
+      method: POST
+      json:
+        title: 'Post title'
+        description: 'Post description'
+    response:
+      status_code: 201
+
+  - name: Getting posts list
+    request:
+      url: "{host}/api/posts/"
+      method: GET
+    response:
+      status_code: 200
