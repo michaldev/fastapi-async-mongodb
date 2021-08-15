@@ -1,4 +1,4 @@
-> Simple example with FastAPI + MongoDB    
+# Simple example with FastAPI + MongoDB    
 
 >*Plans: complete, minimalistic template based on external services.     
 Focused on performance, less own code and infrastructure.*
@@ -24,7 +24,7 @@ Build on **Python: 3.8**.
 
 > Example is completely and works very well. In the future probably I add more.
 
-- Scheme for MongoDB    
-- More examples with custom response models    
-- File handling with external provider (Amazon S3, DO Spaces)    
-- Authorization by external provider (Auth0)    
+- Scheme for MongoDB
+- More examples with custom response models 
+- [Maybe] File handling with external provider (Amazon S3, DO Spaces)    
+- [Maybe] Authorization by external provider (Auth0)    
