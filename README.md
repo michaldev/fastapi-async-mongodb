@@ -25,7 +25,8 @@ Build on **Python: 3.8**.
 
 > Example is completely and works very well. In the future probably I add more.
 
+- Beanie as Mongo ORM
 - Scheme for MongoDB
 - More examples with custom response models 
 - [Maybe] File handling with external provider (Amazon S3, DO Spaces)    
-- [Maybe] Authorization by external provider (Auth0)    
+- [Maybe] Authorization by external provider (LockLess.dev)    
