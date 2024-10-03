@@ -29,4 +29,4 @@ Build on **Python: 3.8**.
 - Scheme for MongoDB
 - More examples with custom response models 
 - [Maybe] File handling with external provider (Amazon S3, DO Spaces)    
-- [Maybe] Authorization by external provider (LockLess.dev)    
+- [Maybe] Authorization by external provider (JuicyAuth.dev)    
